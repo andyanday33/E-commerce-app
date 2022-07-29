@@ -1,7 +1,17 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import useSWR, { Fetcher } from 'swr';
+
+const fetcher: Fetcher<string, string> = (...args) => fetch(...args).then((res) => res.json())
+
 
 const Home: NextPage = () => {
+  const { data, error } = useSWR('http://localhost:5285/Products', fetcher)
+
+  if (error) return <div>failed to load</div>;
+
+  console.log(data);
+
   return (
     <div>
       <Head>
