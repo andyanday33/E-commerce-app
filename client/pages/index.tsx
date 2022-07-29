@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useEffect } from 'react';
 import useSWR, { Fetcher } from 'swr';
 
-type productType = {
+interface IProduct {
     id: number,
     name: string,
     brand: string,
@@ -12,10 +12,10 @@ type productType = {
     imageUrl: string,
     quantityInStock: number,
     type: string,
-  }
+}
 
 
-const fetcher: Fetcher<productType[], string> = (...args) => fetch(...args).then((res) => res.json())
+const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((res) => res.json())
 
 
 const Home: NextPage = () => {
