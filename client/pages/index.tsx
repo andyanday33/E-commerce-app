@@ -2,18 +2,7 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 import { useEffect } from 'react';
 import useSWR, { Fetcher } from 'swr';
-
-interface IProduct {
-    id: number,
-    name: string,
-    brand: string,
-    description: string,
-    price: number,
-    imageUrl: string,
-    quantityInStock: number,
-    type: string,
-}
-
+import { IProduct } from '../types';
 
 const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((res) => res.json())
 
