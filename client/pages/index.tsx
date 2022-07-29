@@ -1,16 +1,31 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import { useEffect } from 'react';
 import useSWR, { Fetcher } from 'swr';
 
-const fetcher: Fetcher<string, string> = (...args) => fetch(...args).then((res) => res.json())
+type dataType = [
+  {
+    id: number,
+    name: string,
+    brand: string,
+    description: string,
+    price: number,
+    imageUrl: string,
+    quantityInStock: number,
+    type: string,
+  }
+]
+
+const fetcher: Fetcher<dataType, string> = (...args) => fetch(...args).then((res) => res.json())
 
 
 const Home: NextPage = () => {
   const { data, error } = useSWR('http://localhost:5285/Products', fetcher)
 
-  if (error) return <div>failed to load</div>;
+  // useEffect(() => {
+  //   if (data) console.log(data);
+  // }, [data]);
 
-  console.log(data);
 
   return (
     <div>
@@ -21,6 +36,18 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <h1>Store</h1>
+        {error && <p>Failed to fetch data.</p>}
+        {!error && !data && <p>Loading...</p>}
+        {!!data && (
+          <ul>
+            {data.map(product => (
+              <li key={product.id}>
+                <p>{product.name}</p>
+              </li>
+              ),
+            )}
+          </ul>)
+        }
       </main>
     </div>
   )
