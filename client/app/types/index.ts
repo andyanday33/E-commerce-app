@@ -8,3 +8,8 @@ export interface IProduct {
     quantityInStock: number,
     type: string,
 }
+
+export interface ICatalogProps {
+    products: IProduct[] | undefined,
+    error: string | undefined,
+}
