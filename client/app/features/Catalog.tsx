@@ -1,22 +1,25 @@
-import { Typography } from '@mui/material';
+import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 import { ICatalogProps } from '../types';
 
 const Catalog: React.FC<ICatalogProps> = ({ products, error }) => {
   return (
     <section className="catalog">
-        {error && <p>Failed to fetch data.</p>}
-        {!error && !products && <p>Loading...</p>}
-        {!!products&& (
-          <ul>
-            {products.map(product => (
-              <li key={product.id}>
-                <Typography variant="body1">{product.name}</Typography>
-              </li>
-              ),
-            )}
-          </ul>)
-        }
+      {error && <p>Failed to fetch data.</p>}
+      {!error && !products && <p>Loading...</p>}
+      {!!products&& (
+        <List>
+          {products.map(product => (
+            <ListItem key={product.id}>
+              <ListItemAvatar>
+                <Avatar src={product.imageUrl}/>
+              </ListItemAvatar>
+              <ListItemText>{product.name} - {product.price}</ListItemText>
+            </ListItem>
+            ),
+          )}
+        </List>)
+      }
     </section>
   )
 }
