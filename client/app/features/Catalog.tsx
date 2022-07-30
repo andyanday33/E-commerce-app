@@ -3,6 +3,7 @@ import React from 'react';
 import { ICatalogProps } from '../types';
 
 const Catalog: React.FC<ICatalogProps> = ({ products, error }) => {
+ 
   return (
     <section className="catalog">
       {error && <p>Failed to fetch data.</p>}
@@ -12,7 +13,7 @@ const Catalog: React.FC<ICatalogProps> = ({ products, error }) => {
           {products.map(product => (
             <ListItem key={product.id}>
               <ListItemAvatar>
-                <Avatar src={product.imageUrl}/>
+                <Avatar src={product.pictureUrl}/>
               </ListItemAvatar>
               <ListItemText>{product.name} - {product.price}</ListItemText>
             </ListItem>

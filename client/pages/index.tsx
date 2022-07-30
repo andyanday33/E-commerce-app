@@ -11,7 +11,6 @@ const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((r
 
 const Home: NextPage = () => {
   const { data: products, error } = useSWR('http://localhost:5285/Products', fetcher)
-
   return (
     <>
       <Head>
