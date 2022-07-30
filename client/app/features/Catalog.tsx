@@ -1,7 +1,7 @@
 import React from 'react';
 import { ICatalogProps } from '../types';
 
-export default function Catalog({ products, error }: ICatalogProps) {
+export const Catalog : React.FC<ICatalogProps> = ({ products, error }) => {
   return (
     <section className="catalog">
         {error && <p>Failed to fetch data.</p>}
