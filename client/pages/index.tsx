@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import useSWR, { Fetcher } from 'swr';
 import { IProduct } from '../app/types';
 import Catalog from '../app/features/Catalog';
+import { Typography } from '@mui/material';
 
 const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((res) => res.json())
 
@@ -19,7 +20,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <h1>Store</h1>
+        <Typography variant="h3" component="h1">Store</Typography>
         <Catalog products={products} error={error}/>
       </main>
     </>

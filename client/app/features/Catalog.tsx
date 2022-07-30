@@ -1,3 +1,4 @@
+import { Typography } from '@mui/material';
 import React from 'react';
 import { ICatalogProps } from '../types';
 
@@ -10,7 +11,7 @@ const Catalog: React.FC<ICatalogProps> = ({ products, error }) => {
           <ul>
             {products.map(product => (
               <li key={product.id}>
-                <p>{product.name}</p>
+                <Typography variant="body1">{product.name}</Typography>
               </li>
               ),
             )}
