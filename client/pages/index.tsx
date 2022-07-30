@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import { useEffect } from 'react';
 import useSWR, { Fetcher } from 'swr';
 import { IProduct } from '../app/types';
 import Catalog from '../app/features/Catalog';
