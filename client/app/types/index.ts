@@ -17,3 +17,7 @@ export interface ICatalogProps {
 export interface IProductListProps {
     products: IProduct[],
 }
+
+export interface IProductCardProps {
+    product: IProduct,
+}

@@ -1,8 +1,7 @@
 import React from 'react';
+import { IProductCardProps } from '../types';
 
-type Props = {}
-
-function ProductCard({}: Props) {
+const ProductCard: React.FC<IProductCardProps> = (props) => {
   return (
     <div>ProductCard</div>
   )
