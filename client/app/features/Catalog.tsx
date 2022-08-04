@@ -1,4 +1,3 @@
-import { Avatar, List, ListItem, ListItemAvatar, ListItemText, Typography } from '@mui/material';
 import React from 'react';
 import { ICatalogProps } from '../types';
 import ProductList from './ProductList';
