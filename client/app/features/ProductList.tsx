@@ -8,7 +8,7 @@ const ProductList: React.FC<IProductListProps> = ({ products }) => {
     <List>
       <Grid container spacing={4}>
         {products.map(product => (
-            <Grid item xs={12} sm={6} lg={4} key={product.id}>
+            <Grid item xs={12} sm={6} lg={3} key={product.id}>
               <ProductCard product={product}/>
             </Grid>
           ),
