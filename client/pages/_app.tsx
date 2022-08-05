@@ -10,6 +10,9 @@ function MyApp({ Component, pageProps }: AppProps) {
   const theme = createTheme({
     palette: {
       mode: paletteMode,
+      background: {
+        default: darkMode ? '#121212' : '#eaeaea',
+      }
     }
   });
 
