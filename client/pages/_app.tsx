@@ -17,24 +17,10 @@ function MyApp({ Component, pageProps }: AppProps) {
     setDarkMode(!darkMode);
   }
 
-  const DarkModeSwitch: React.FC= () => (
-    <FormControl>
-        <FormControlLabel 
-          control={
-            <Switch
-              checked={darkMode}
-              onChange={handleThemeChange}
-              inputProps={{ 'aria-label': 'theme-change' }}
-            />}
-          label={darkMode? 'Light Mode': 'Dark Mode'}
-        />
-    </FormControl>
-  );
-
   return (
   <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Header DarkModeSwitch={DarkModeSwitch}/>
+      <Header darkMode={darkMode} handleThemeChange={handleThemeChange}/>
       <Component {...pageProps} />
   </ThemeProvider>
   )
