@@ -3,7 +3,7 @@ import Head from 'next/head';
 import useSWR, { Fetcher } from 'swr';
 import { IProduct } from '../app/types';
 import Catalog from '../app/features/Catalog';
-import { CssBaseline, Typography } from '@mui/material';
+import { Container, CssBaseline, Typography } from '@mui/material';
 import Header from '../app/layouts/Header';
 
 const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((res) => res.json())
@@ -21,7 +21,9 @@ const Home: NextPage = () => {
       <CssBaseline />
       <Header />
       <main>
-        <Catalog products={products} error={error}/>
+        <Container>
+          <Catalog products={products} error={error}/>
+        </Container>
       </main>
     </>
   )
