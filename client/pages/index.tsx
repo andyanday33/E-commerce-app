@@ -1,16 +1,11 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import useSWR, { Fetcher } from 'swr';
-import { IProduct } from '../app/types';
 import Catalog from '../app/features/Catalog';
 import { Container, CssBaseline, Typography } from '@mui/material';
 import Header from '../app/layouts/Header';
 
-const fetcher: Fetcher<IProduct[], string> = (...args) => fetch(...args).then((res) => res.json())
-
 
 const Home: NextPage = () => {
-  const { data: products, error } = useSWR('http://localhost:5285/Products', fetcher)
   return (
     <>
       <Head>
@@ -22,7 +17,7 @@ const Home: NextPage = () => {
       <Header />
       <main>
         <Container>
-          <Catalog products={products} error={error}/>
+          <Catalog />
         </Container>
       </main>
     </>

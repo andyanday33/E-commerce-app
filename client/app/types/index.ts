@@ -9,11 +9,6 @@ export interface IProduct {
     type: string,
 }
 
-export interface ICatalogProps {
-    products: IProduct[] | undefined,
-    error: string | undefined,
-}
-
 export interface IProductListProps {
     products: IProduct[],
 }
