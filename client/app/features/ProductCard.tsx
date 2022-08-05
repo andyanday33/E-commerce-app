@@ -1,6 +1,7 @@
 import React from 'react';
 import { IProductCardProps } from '../types';
 import { Avatar, Button, Card, CardActions, CardContent, CardHeader, CardMedia, Typography } from '@mui/material';
+import { deepPurple } from '@mui/material/colors';
 
 const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
   return (
@@ -22,7 +23,7 @@ const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
     <CardMedia
       component="img"
       height="140"
-      sx={{ objectFit: 'contain' }}
+      sx={{ objectFit: 'contain', bgcolor: deepPurple[100] }}
       image={product.pictureUrl}
       alt={product.name + ' image'}
     />
