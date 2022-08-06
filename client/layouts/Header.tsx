@@ -17,6 +17,7 @@ interface IHeaderProps {
   handleThemeChange: () => void;
 }
 const pages = ["Catalog", "About", "Contact"];
+const functionalities = ["Login", "Register"];
 
 const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
   return (
@@ -61,6 +62,28 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
                   sx={{ my: 2, color: "white", display: "block" }}
                 >
                   {page}
+                </Button>
+              </Link>
+            ))}
+          </ButtonGroup>
+          <ButtonGroup
+            variant="text"
+            sx={{
+              position: "relative",
+              display: "flex",
+              ml: "auto",
+            }}
+          >
+            {functionalities.map((functionality) => (
+              <Link
+                key={functionality}
+                href={`/${functionality.toLowerCase()}`}
+              >
+                <Button
+                  href={functionality.toLowerCase()}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {functionality}
                 </Button>
               </Link>
             ))}
