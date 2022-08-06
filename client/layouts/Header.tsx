@@ -23,9 +23,14 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
     <header>
       <AppBar position="static" sx={{ mb: 4 }}>
         <Toolbar>
-          <Typography variant="h6" sx={{ mx: 4 }}>
-            Bumi Store
-          </Typography>
+          <Link href="/">
+            <a style={{ textDecoration: "none", color: "#ffffff" }}>
+              <Typography variant="h6" sx={{ mx: 4 }}>
+                Bumi Store
+              </Typography>
+            </a>
+          </Link>
+
           <Divider />
           <FormControl>
             <FormControlLabel
