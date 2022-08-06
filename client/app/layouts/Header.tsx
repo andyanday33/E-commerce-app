@@ -1,18 +1,16 @@
 import React from "react";
 import {
   AppBar,
-  Box,
   Button,
   ButtonGroup,
   Divider,
   FormControl,
   FormControlLabel,
-  Grid,
   Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
-import { useRouter } from "next/router";
+import Link from "next/link";
 
 interface IHeaderProps {
   darkMode: boolean;
@@ -21,13 +19,6 @@ interface IHeaderProps {
 const pages = ["Catalog", "About", "Contact"];
 
 const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
-  const router = useRouter();
-
-  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    e.preventDefault();
-    router.push(e.currentTarget.href);
-  };
-
   return (
     <header>
       <AppBar position="static" sx={{ mb: 4 }}>
@@ -59,14 +50,14 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
             }}
           >
             {pages.map((page) => (
-              <Button
-                href={page.toLowerCase()}
-                key={page}
-                sx={{ my: 2, color: "white", display: "block" }}
-                onClick={handleNavigation}
-              >
-                {page}
-              </Button>
+              <Link key={page} href={`/${page.toLowerCase()}`}>
+                <Button
+                  href={page.toLowerCase()}
+                  sx={{ my: 2, color: "white", display: "block" }}
+                >
+                  {page}
+                </Button>
+              </Link>
             ))}
           </ButtonGroup>
         </Toolbar>
