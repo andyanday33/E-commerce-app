@@ -45,6 +45,7 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               label={darkMode ? "Light Mode" : "Dark Mode"}
             />
           </FormControl>
+          {/* TODO: split these button groups inside a new component called NavigationButtons */}
           <ButtonGroup
             variant="text"
             sx={{
