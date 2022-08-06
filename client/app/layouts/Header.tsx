@@ -3,6 +3,7 @@ import {
   AppBar,
   Box,
   Button,
+  ButtonGroup,
   Divider,
   FormControl,
   FormControlLabel,
@@ -47,19 +48,14 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               label={darkMode ? "Light Mode" : "Dark Mode"}
             />
           </FormControl>
-          <Box
-            justifyContent="center"
-            alignItems="center"
+          <ButtonGroup
+            variant="text"
             sx={{
-              flexGrow: 1,
-              display: {
-                xs: "none",
-                md: "flex",
-                position: "absolute",
-                left: "0",
-                right: "0",
-                mx: "auto",
-              },
+              position: "absolute",
+              display: "flex",
+              mx: "auto",
+              left: "50%",
+              transform: "translate(-50%, 0)",
             }}
           >
             {pages.map((page) => (
@@ -72,7 +68,7 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
                 {page}
               </Button>
             ))}
-          </Box>
+          </ButtonGroup>
         </Toolbar>
       </AppBar>
     </header>
