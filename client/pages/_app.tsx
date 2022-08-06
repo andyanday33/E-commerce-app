@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import type { AppProps } from "next/app";
 import { useState } from "react";
-import Header from "../app/layouts/Header";
+import Header from "../layouts/Header";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const [darkMode, setDarkMode] = useState(false);

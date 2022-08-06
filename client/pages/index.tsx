@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Catalog from "../app/features/Catalog";
-import { Container } from "@mui/material";
+import { Container, Typography } from "@mui/material";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +12,7 @@ const Home: NextPage = () => {
       </Head>
       <main>
         <Container>
-          <Catalog />
+          <Typography variant="h2">Home Page</Typography>
         </Container>
       </main>
     </>
