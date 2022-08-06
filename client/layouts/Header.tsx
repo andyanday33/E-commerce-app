@@ -28,7 +28,7 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
       <AppBar position="static" sx={{ mb: 4 }}>
         <Toolbar>
           <Link href="/">
-            <a style={{ textDecoration: "none", color: "#ffffff" }}>
+            <a style={{ textDecoration: "none", color: "white" }}>
               <Typography variant="h6" sx={{ mx: 4 }}>
                 Bumi Store
               </Typography>
@@ -71,10 +71,12 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
             ))}
           </ButtonGroup>
           <IconButton
+            size="large"
             sx={{
               position: "relative",
               display: "flex",
               ml: "auto",
+              color: "white",
             }}
           >
             <Badge badgeContent={4} color="secondary">
