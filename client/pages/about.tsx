@@ -2,8 +2,8 @@ import React from "react";
 
 type Props = {};
 
-const about = (props: Props) => {
-  return <div>about</div>;
+const About = (props: Props) => {
+  return <div>About</div>;
 };
 
-export default about;
+export default About;
