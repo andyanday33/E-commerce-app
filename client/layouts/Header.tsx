@@ -1,16 +1,19 @@
 import React from "react";
 import {
   AppBar,
+  Badge,
   Button,
   ButtonGroup,
   Divider,
   FormControl,
   FormControlLabel,
+  IconButton,
   Switch,
   Toolbar,
   Typography,
 } from "@mui/material";
 import Link from "next/link";
+import { ShoppingCart } from "@mui/icons-material";
 
 interface IHeaderProps {
   darkMode: boolean;
@@ -67,12 +70,22 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               </Link>
             ))}
           </ButtonGroup>
+          <IconButton
+            sx={{
+              position: "relative",
+              display: "flex",
+              ml: "auto",
+            }}
+          >
+            <Badge badgeContent={4} color="secondary">
+              <ShoppingCart />
+            </Badge>
+          </IconButton>
           <ButtonGroup
             variant="text"
             sx={{
               position: "relative",
               display: "flex",
-              ml: "auto",
             }}
           >
             {functionalities.map((functionality) => (
