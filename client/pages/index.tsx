@@ -1,11 +1,9 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
-import Catalog from '../app/features/Catalog';
-import { Container } from '@mui/material';
-
+import type { NextPage } from "next";
+import Head from "next/head";
+import Catalog from "../app/features/Catalog";
+import { Container } from "@mui/material";
 
 const Home: NextPage = () => {
-
   return (
     <>
       <Head>
@@ -19,7 +17,7 @@ const Home: NextPage = () => {
         </Container>
       </main>
     </>
-  )
-}
+  );
+};
 
 export default Home;
