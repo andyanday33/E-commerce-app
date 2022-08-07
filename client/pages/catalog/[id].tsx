@@ -39,8 +39,10 @@ const CatalogProduct = (props: Props) => {
           />
         )}
       </Grid>
-      <Grid item xs={12} sm={6}>
-        <Typography variant="h2">{product.name}</Typography>
+      <Grid item xs={12} sm={6} sx={{ p: 6 }}>
+        <Typography variant="h2" textAlign="center">
+          {product.name}
+        </Typography>
         <Divider sx={{ mb: 2 }} />
       </Grid>
     </Grid>
