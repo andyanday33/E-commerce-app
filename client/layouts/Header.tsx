@@ -27,7 +27,7 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
     <header>
       <AppBar position="static" sx={{ mb: 4 }}>
         <Toolbar>
-          <Link href="/">
+          <Link href="/" passHref>
             <a style={{ textDecoration: "none", color: "white" }}>
               <Typography variant="h6" sx={{ mx: 4 }}>
                 Bumi Store
@@ -59,8 +59,8 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               transform: "translate(-50%, 0)",
             }}
           >
-            {pages.map((page) => (
-              <Link key={page} href={`/${page.toLowerCase()}`}>
+            {pages.map((page: string) => (
+              <Link key={page} href={`/${page.toLowerCase()}`} passHref>
                 <Button
                   sx={{
                     my: 2,
@@ -99,10 +99,11 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               display: "flex",
             }}
           >
-            {functionalities.map((functionality) => (
+            {functionalities.map((functionality: string) => (
               <Link
                 key={functionality}
                 href={`/${functionality.toLowerCase()}`}
+                passHref
               >
                 <Button
                   href={functionality.toLowerCase()}
