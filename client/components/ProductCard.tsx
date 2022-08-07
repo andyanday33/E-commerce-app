@@ -11,6 +11,7 @@ import {
   Typography,
 } from "@mui/material";
 import { deepPurple } from "@mui/material/colors";
+import Link from "next/link";
 
 const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
   return (
@@ -48,7 +49,9 @@ const ProductCard: React.FC<IProductCardProps> = ({ product }) => {
       </CardContent>
       <CardActions>
         <Button size="small">Add to cart</Button>
-        <Button size="small">View</Button>
+        <Link href={`/catalog/${product.id}`}>
+          <Button size="small">View</Button>
+        </Link>
       </CardActions>
     </Card>
   );
