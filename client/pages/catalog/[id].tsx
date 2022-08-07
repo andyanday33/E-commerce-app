@@ -1,8 +1,9 @@
-import { Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useEffect } from "react";
 import useSWR, { Fetcher } from "swr";
 import { IProduct } from "../../types";
+import Image from "next/image";
 
 type Props = {};
 
@@ -19,9 +20,18 @@ const CatalogProduct = (props: Props) => {
   if (!product && !error) return <Typography>Loading...</Typography>;
   if (error || !product) return <Typography>Failed to fetch data.</Typography>;
   return (
-    <div>
-      CatalogProduct #{id} #{product.name}
-    </div>
+    <Grid container spacing={6}>
+      <Grid item xs={12} sm={6}>
+        {product.pictureUrl && (
+          <Image
+            src={product.pictureUrl}
+            alt={`product ${product.name} picture`}
+            width="100%"
+            height="100%"
+          />
+        )}
+      </Grid>
+    </Grid>
   );
 };
 
