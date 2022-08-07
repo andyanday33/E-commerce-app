@@ -62,7 +62,6 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
             {pages.map((page) => (
               <Link key={page} href={`/${page.toLowerCase()}`}>
                 <Button
-                  href={page.toLowerCase()}
                   sx={{
                     my: 2,
                     color: "white",
