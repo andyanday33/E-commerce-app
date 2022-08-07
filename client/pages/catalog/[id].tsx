@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Divider, Grid, Typography } from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import useSWR, { Fetcher } from "swr";
@@ -21,15 +21,27 @@ const CatalogProduct = (props: Props) => {
   if (error || !product) return <Typography>Failed to fetch data.</Typography>;
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12} sm={6}>
+      <Grid
+        item
+        xs={12}
+        sm={6}
+        position="relative"
+        sx={{ my: 6 }}
+        display="flex"
+        justifyContent="center"
+      >
         {product.pictureUrl && (
           <Image
             src={product.pictureUrl}
             alt={`product ${product.name} picture`}
-            width="100%"
-            height="100%"
+            width="500"
+            height="500"
           />
         )}
+      </Grid>
+      <Grid item xs={12} sm={6}>
+        <Typography variant="h2">{product.name}</Typography>
+        <Divider sx={{ mb: 2 }} />
       </Grid>
     </Grid>
   );
