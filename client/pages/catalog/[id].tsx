@@ -1,4 +1,13 @@
-import { Divider, Grid, Typography } from "@mui/material";
+import {
+  Divider,
+  Grid,
+  Table,
+  TableBody,
+  TableCell,
+  TableContainer,
+  TableRow,
+  Typography,
+} from "@mui/material";
 import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import useSWR, { Fetcher } from "swr";
@@ -44,6 +53,35 @@ const CatalogProduct = (props: Props) => {
           {product.name}
         </Typography>
         <Divider sx={{ mb: 2 }} />
+        <Typography variant="h4" component="h3" color="secondary.main">
+          £{(product.price / 100).toFixed(2)}
+        </Typography>
+        <TableContainer sx={{ pt: 2 }}>
+          <Table>
+            <TableBody>
+              <TableRow>
+                <TableCell>Name</TableCell>
+                <TableCell>{product.name}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Description</TableCell>
+                <TableCell>{product.description}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Type</TableCell>
+                <TableCell>{product.type}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Brand</TableCell>
+                <TableCell>{product.brand}</TableCell>
+              </TableRow>
+              <TableRow>
+                <TableCell>Quantity left in stock</TableCell>
+                <TableCell>{product.quantityInStock}</TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Grid>
     </Grid>
   );
