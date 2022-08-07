@@ -63,7 +63,14 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               <Link key={page} href={`/${page.toLowerCase()}`}>
                 <Button
                   href={page.toLowerCase()}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    "&:hover": {
+                      color: "#ef9a9a",
+                    },
+                  }}
                 >
                   {page}
                 </Button>
@@ -77,6 +84,9 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               display: "flex",
               ml: "auto",
               color: "white",
+              "&:hover": {
+                color: "#ef9a9a",
+              },
             }}
           >
             <Badge badgeContent={4} color="secondary">
@@ -97,7 +107,14 @@ const Header: React.FC<IHeaderProps> = ({ darkMode, handleThemeChange }) => {
               >
                 <Button
                   href={functionality.toLowerCase()}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    "&:hover": {
+                      color: "#ef9a9a",
+                    },
+                  }}
                 >
                   {functionality}
                 </Button>
