@@ -1,11 +1,5 @@
 import { ThemeProvider } from "@emotion/react";
-import {
-  createTheme,
-  CssBaseline,
-  FormControl,
-  FormControlLabel,
-  Switch,
-} from "@mui/material";
+import { createTheme, CssBaseline } from "@mui/material";
 import type { AppProps } from "next/app";
 import { useState } from "react";
 import Header from "../layouts/Header";

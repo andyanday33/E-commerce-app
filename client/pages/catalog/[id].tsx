@@ -9,7 +9,6 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import React, { useEffect } from "react";
 import useSWR, { Fetcher } from "swr";
 import { IProduct } from "../../types";
 import Image from "next/image";
